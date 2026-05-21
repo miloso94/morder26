@@ -15,13 +15,13 @@ A simple order reservation application with event-driven architecture built with
 
 ## Quick Start
 
-### 1 — Start
+### 1 Start
 
 ```bash
 docker compose up --build
 ```
 
-### 2 — Send an order
+### 2 Send an order
 
 ```bash
 curl -X POST http://localhost:8080/orders -H "Content-Type: application/json" -H "X-API-KEY: 38f1b725-fa63-484d-a904-0551321ae2f5" -d "{\"orderId\":\"123\",\"itemId\":\"item-1\",\"quantity\":2}"
@@ -36,7 +36,7 @@ curl -X POST http://localhost:8080/orders -H "Content-Type: application/json" -H
 }
 ```
 
-### 3 — Check logs and database
+### 3 Check logs and database
 
 You should see lines like:
 ```
@@ -46,7 +46,9 @@ You should see lines like:
 [CONSUMER] Reservation result: status=RESERVED message=Reserved 2 unit(s) of 'item-1'
 ```
 
-## Stopping
+More test cases can be found in the Postman collection: [morder26.postman_collection.json](morder26.postman_collection.json)
+
+## 4 Stopping
 
 ```bash
 docker compose down -v       # stop + delete volumes (resets DB)
